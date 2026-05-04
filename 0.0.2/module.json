@@ -1,0 +1,25 @@
+{
+  "$id": "https://schema.sparkium.org/0.0.2/module.json",
+  "title": "Module",
+  "description": "Optional configuration schema for a Sparkium course module (folder).",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "minLength": 1,
+      "description": "Human-readable title of the module.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Short summary of the module.",
+      "type": "string"
+    },
+    "order": {
+      "minimum": 0,
+      "description": "Explicit sort order. Lower numbers appear first.",
+      "type": "integer"
+    }
+  }
+}

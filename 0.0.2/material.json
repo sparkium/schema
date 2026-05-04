@@ -1,0 +1,58 @@
+{
+  "$id": "https://schema.sparkium.org/0.0.2/material.json",
+  "title": "Material",
+  "description": "Front-matter schema for a Sparkium eLearning material (lesson, exercise, etc.).",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "minLength": 1,
+      "description": "Human-readable title of the material.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Short summary shown in navigation and previews.",
+      "type": "string"
+    },
+    "type": {
+      "description": "Semantic type of the material.",
+      "anyOf": [
+        {
+          "const": "lesson",
+          "type": "string"
+        },
+        {
+          "const": "exercise",
+          "type": "string"
+        },
+        {
+          "const": "quiz",
+          "type": "string"
+        },
+        {
+          "const": "resource",
+          "type": "string"
+        }
+      ]
+    },
+    "order": {
+      "minimum": 0,
+      "description": "Explicit sort order within the parent module. Lower numbers appear first.",
+      "type": "integer"
+    },
+    "duration": {
+      "minimum": 1,
+      "description": "Estimated reading/viewing time in minutes.",
+      "type": "integer"
+    },
+    "tags": {
+      "description": "Free-form tags for categorization and search.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
