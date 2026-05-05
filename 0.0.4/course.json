@@ -1,0 +1,49 @@
+{
+  "$id": "https://schema.sparkium.org/0.0.4/course.json",
+  "title": "Course",
+  "description": "Configuration schema for a Sparkium eLearning course.",
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "title": {
+      "minLength": 1,
+      "description": "Human-readable title of the course.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Short summary of what the course covers.",
+      "type": "string"
+    },
+    "version": {
+      "description": "Semantic version of the course content.",
+      "type": "string"
+    },
+    "authors": {
+      "description": "List of author names or identifiers.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "description": "Free-form tags for categorization and search.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "language": {
+      "pattern": "^[a-z]{2,3}(-[A-Z]{2,3})?$",
+      "description": "BCP 47 language tag, e.g. \"en\", \"de-CH\".",
+      "examples": [
+        "en",
+        "de",
+        "de-CH",
+        "fr"
+      ],
+      "type": "string"
+    }
+  }
+}
